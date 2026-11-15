@@ -23,7 +23,7 @@ class Settings(BaseSettings):
 
     # LLM. Leave the key empty to run in demo mode (no external calls).
     gemini_api_key: str = ""
-    gemini_model: str = "gemini-2.5-flash"
+    gemini_model: str = "gemini-3.5-flash"
     llm_temperature: float = 0.2
     llm_max_output_tokens: int = 2048
     llm_timeout_seconds: int = 30

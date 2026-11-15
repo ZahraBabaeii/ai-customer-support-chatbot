@@ -98,8 +98,8 @@ pip install -r requirements.txt
 3. Put the key after `GEMINI_API_KEY=` in `.env`.
 
 `.env` is git-ignored; the key is only ever read from the environment. The default model is
-`gemini-2.5-flash`, which is available on the Gemini API free tier. To use another model
-(for example `gemini-2.5-flash-lite`), set `GEMINI_MODEL` in `.env`. Free-tier requests are
+`gemini-3.5-flash`, which is available on the Gemini API free tier. To use another model
+(for example `gemini-3.5-flash-lite`), set `GEMINI_MODEL` in `.env`. Free-tier requests are
 rate-limited, and Google may use free-tier prompts to improve its products.
 
 **No key?** Leave `GEMINI_API_KEY` empty and the app runs in **demo mode**: retrieval works
@@ -160,7 +160,7 @@ All settings are environment variables (or `.env` entries); see `.env.example`.
 | Variable | Default | Purpose |
 | --- | --- | --- |
 | `GEMINI_API_KEY` | empty | Gemini key; empty = demo mode |
-| `GEMINI_MODEL` | `gemini-2.5-flash` | Generation model |
+| `GEMINI_MODEL` | `gemini-3.5-flash` | Generation model |
 | `EMBEDDING_BACKEND` | `auto` | `auto`, `onnx`, or `hash` (offline lexical fallback) |
 | `RETRIEVAL_TOP_K` | `4` | Passages retrieved per question |
 | `MIN_RELEVANCE` | per backend | Minimum cosine similarity for a passage to be used |
