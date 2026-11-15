@@ -196,14 +196,24 @@ def render_sources(sources: list[dict]) -> None:
     )
 
 
+def render_body(message: dict) -> None:
+    if message.get("error"):
+        st.error(message["content"], icon="⚠️")
+        return
+    if message.get("mode") == "fallback":
+        st.warning(
+            "Our AI assistant is temporarily unavailable, so this is the closest "
+            "matching text from our help pages rather than a written answer.",
+            icon="⚠️",
+        )
+    st.markdown(message["content"])
+    render_sources(message.get("sources", []))
+
+
 def render_message(message: dict) -> None:
     avatar = "☁️" if message["role"] == "assistant" else "🙂"
     with st.chat_message(message["role"], avatar=avatar):
-        if message.get("error"):
-            st.error(message["content"], icon="⚠️")
-        else:
-            st.markdown(message["content"])
-            render_sources(message.get("sources", []))
+        render_body(message)
 
 
 def handle_prompt(prompt: str) -> None:
@@ -222,14 +232,11 @@ def handle_prompt(prompt: str) -> None:
                     "role": "assistant",
                     "content": data["answer"],
                     "sources": data["sources"],
+                    "mode": data["mode"],
                 }
             except BackendError as exc:
                 reply = {"role": "assistant", "content": str(exc), "error": True}
-        if reply.get("error"):
-            st.error(reply["content"], icon="⚠️")
-        else:
-            st.markdown(reply["content"])
-            render_sources(reply["sources"])
+        render_body(reply)
     st.session_state.messages.append(reply)
 
 

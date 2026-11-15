@@ -59,3 +59,15 @@ def test_real_knowledge_base_loads(chunks):
     sources = {c.source for c in chunks}
     assert {"products.md", "faq.md", "shipping_policy.md", "returns_and_refunds.md"} <= sources
     assert all(c.body.strip() for c in chunks)
+
+
+def test_catalog_overview_is_a_single_chunk_listing_every_product(chunks):
+    overview = [c for c in chunks if c.section == "Our Products: What We Sell"]
+    assert len(overview) == 1
+    product_names = [
+        c.section.split(" > ")[-1].removeprefix("Nimbus ")
+        for c in chunks
+        if c.source == "products.md" and " > " in c.section
+    ]
+    assert len(product_names) == 14
+    assert all(name in overview[0].body for name in product_names)

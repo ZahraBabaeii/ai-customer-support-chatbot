@@ -2,6 +2,18 @@
 
 All prices are in US dollars (USD) and exclude sales tax. Every product includes a 2-year limited warranty.
 
+## Our Products: What We Sell
+
+These are all of our products. Nimbus Gear sells 12 products in 4 categories, plus 2 bundles:
+
+- **Audio:** Aero Pro Wireless Headphones ($249.00), Aero Lite Wireless Headphones ($129.00), Pulse Buds True Wireless Earbuds ($99.00), Echo Mini Portable Speaker ($79.00)
+- **Keyboards and Mice:** Type 75 Mechanical Keyboard ($149.00), Glide Ergonomic Mouse ($69.00)
+- **Power and Charging:** Volt 65 GaN Wall Charger ($49.00), Volt Bank 20K Power Bank ($89.00), Dock 3-in-1 Wireless Charging Stand ($59.00)
+- **Bags and Desk Accessories:** Transit Backpack 24L ($139.00), Lift Laptop Stand ($59.00), Hub 8-in-1 USB-C Hub ($79.00)
+- **Bundles:** Work From Anywhere Bundle ($229.00), Travel Power Bundle ($119.00)
+
+We do not sell phones, laptops, tablets, or other products that are not on this list.
+
 ## Audio
 
 ### Nimbus Aero Pro Wireless Headphones
